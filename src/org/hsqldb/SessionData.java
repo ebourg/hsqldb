@@ -600,7 +600,7 @@ public class SessionData {
 
             return clob;
         } catch (IOException e) {
-            throw Error.error(ErrorCode.FILE_IO_ERROR, e.toString());
+            throw Error.error(ErrorCode.FILE_IO_ERROR, e);
         } finally {
             try {
                 if (is != null) {
@@ -626,7 +626,7 @@ public class SessionData {
 
             return blob;
         } catch (IOException e) {
-            throw Error.error(ErrorCode.FILE_IO_ERROR);
+            throw Error.error(ErrorCode.FILE_IO_ERROR, e);
         } finally {
             try {
                 if (is != null) {

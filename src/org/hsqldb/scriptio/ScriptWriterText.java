@@ -288,7 +288,7 @@ public class ScriptWriterText extends ScriptWriterBase {
                 ((GZIPOutputStream) fileStreamOut).finish();
             }
         } catch (IOException io) {
-            throw Error.error(ErrorCode.FILE_IO_ERROR, outFile);
+            throw Error.error(io, ErrorCode.FILE_IO_ERROR, outFile);
         }
     }
 
@@ -306,7 +306,7 @@ public class ScriptWriterText extends ScriptWriterBase {
 
                 lineCount++;
             } catch (IOException io) {
-                throw Error.error(ErrorCode.FILE_IO_ERROR, outFile);
+                throw Error.error(io, ErrorCode.FILE_IO_ERROR, outFile);
             }
         }
     }

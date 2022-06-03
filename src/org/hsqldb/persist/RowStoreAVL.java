@@ -634,7 +634,7 @@ public abstract class RowStoreAVL implements PersistentStore {
                 }
             }
         } catch (OutOfMemoryError e) {
-            throw Error.error(ErrorCode.OUT_OF_MEMORY);
+            throw Error.error(ErrorCode.OUT_OF_MEMORY, e);
         }
     }
 
@@ -741,7 +741,7 @@ public abstract class RowStoreAVL implements PersistentStore {
 
                 return true;
             } catch (OutOfMemoryError e) {
-                error = Error.error(ErrorCode.OUT_OF_MEMORY);
+                error = Error.error(ErrorCode.OUT_OF_MEMORY, e);
             } catch (HsqlException e) {
                 error = e;
             }

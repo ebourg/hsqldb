@@ -638,8 +638,7 @@ public class LockFile {
         try {
             lockFile = LockFile.newLockFile(path + ".lck");
         } catch (LockFile.BaseException e) {
-            throw Error.error(ErrorCode.LOCK_FILE_ACQUISITION_FAILURE,
-                              e.getMessage());
+            throw Error.error(ErrorCode.LOCK_FILE_ACQUISITION_FAILURE, e);
         }
 
         boolean locked = false;
@@ -647,8 +646,7 @@ public class LockFile {
         try {
             locked = lockFile.tryLock();
         } catch (LockFile.BaseException e) {
-            throw Error.error(ErrorCode.LOCK_FILE_ACQUISITION_FAILURE,
-                              e.getMessage());
+            throw Error.error(ErrorCode.LOCK_FILE_ACQUISITION_FAILURE, e);
         }
 
         // Paranoia mode: In theory, this case can't happen, given the way

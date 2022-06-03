@@ -277,7 +277,7 @@ public class TextFileSettings {
                 bytesForSpace   = " ".getBytes(charEncoding);
             }
         } catch (UnsupportedEncodingException e) {
-            throw Error.error(ErrorCode.X_S0531);
+            throw Error.error(ErrorCode.X_S0531, e);
         }
     }
 

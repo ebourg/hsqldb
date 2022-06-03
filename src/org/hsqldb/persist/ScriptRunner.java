@@ -246,7 +246,7 @@ public class ScriptRunner {
             // catch out-of-memory errors and terminate
             database.logger.logSevereEvent(error, e);
 
-            throw Error.error(ErrorCode.OUT_OF_MEMORY);
+            throw Error.error(ErrorCode.OUT_OF_MEMORY, e);
         } catch (Throwable t) {
             HsqlException e =
                 Error.error(t, ErrorCode.ERROR_IN_LOG_FILE,

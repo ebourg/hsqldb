@@ -247,7 +247,7 @@ public abstract class ScriptWriterBase implements Runnable {
                 isClosed      = true;
             }
         } catch (IOException e) {
-            throw Error.error(ErrorCode.FILE_IO_ERROR);
+            throw Error.error(ErrorCode.FILE_IO_ERROR, e);
         }
 
         byteCount = 0;

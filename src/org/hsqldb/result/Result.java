@@ -266,7 +266,7 @@ public class Result {
 
             return result;
         } catch (IOException e) {
-            throw Error.error(ErrorCode.X_08000);
+            throw Error.error(ErrorCode.X_08000, e);
         }
     }
 

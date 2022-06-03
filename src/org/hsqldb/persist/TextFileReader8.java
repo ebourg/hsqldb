@@ -219,7 +219,7 @@ public class TextFileReader8 implements TextFileReader {
                 try {
                     rowString = buffer.getString();
                 } catch (UnsupportedEncodingException e) {
-                    throw Error.error(ErrorCode.X_S0531);
+                    throw Error.error(ErrorCode.X_S0531, e);
                 }
 
                 ((RowInputText) rowIn).setSource(rowString, position,
@@ -280,7 +280,7 @@ public class TextFileReader8 implements TextFileReader {
                     break;
                 }
             } catch (IOException e) {
-                throw Error.error(ErrorCode.TEXT_FILE);
+                throw Error.error(ErrorCode.TEXT_FILE, e);
             }
 
             switch (c) {
@@ -313,7 +313,7 @@ public class TextFileReader8 implements TextFileReader {
         try {
             header = buffer.getString();
         } catch (UnsupportedEncodingException e) {
-            throw Error.error(ErrorCode.X_S0531);
+            throw Error.error(ErrorCode.X_S0531, e);
         }
 
         position += buffer.getByteSize();
