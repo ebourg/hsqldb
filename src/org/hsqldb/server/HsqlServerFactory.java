@@ -69,7 +69,7 @@ public class HsqlServerFactory {
         try {
             server.setProperties(props);
         } catch (Exception e) {
-            throw new SQLException("Failed to set server properties: " + e);
+            throw new SQLException("Failed to set server properties: " + e, e);
         }
 
         if (!server.openDatabases()) {

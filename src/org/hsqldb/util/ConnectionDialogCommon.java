@@ -210,10 +210,10 @@ final class ConnectionDialogCommon {
             // reached end of file -- this is not clean but it works
         } catch (ClassNotFoundException cnfe) {
             throw new IOException("Unrecognized class type "
-                                  + cnfe.getMessage());
+                                  + cnfe.getMessage(), cnfe);
         } catch (ClassCastException cce) {
             throw new IOException("Unrecognized class type "
-                                  + cce.getMessage());
+                                  + cce.getMessage(), cce);
         } catch (Throwable t) {}
         finally {
             if (objStream != null) {

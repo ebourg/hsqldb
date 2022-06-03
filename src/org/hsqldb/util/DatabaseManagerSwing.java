@@ -2824,7 +2824,7 @@ implements ActionListener, WindowListener, KeyListener, MouseListener {
                 } catch (IOException ioe) {
                     throw new IOException("Failed to read preferences file '"
                                           + prefsFile + "':  "
-                                          + ioe.getMessage());
+                                          + ioe.getMessage(), ioe);
                 }
 
                 tmpString = props.getProperty("autoRefresh");
